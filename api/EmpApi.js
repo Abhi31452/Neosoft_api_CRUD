@@ -7,7 +7,15 @@ async function getAllEmp(){
     return result[0];
 }
 
-/* use ur table  and primary key column of ur table*/
+/* use ur table  and prconst makeConnection=require("../config/mysqldb");
+async function getAllEmp(){
+    const connection = await makeConnection()
+    console.log(connection);
+    // find all records from collection
+    const result=await connection.query('SELECT * from Table1');
+    return result[0];
+}
+imary key column of ur table*/
 async function getEmpById(empId){
     const connection = await makeConnection()
     const result=await connection.query(`SELECT * from Table1 where first_name="${empId}"`);
@@ -21,20 +29,14 @@ async function deleteEmpById(empId){
 async function updateEmp( user){
     const connection = await makeConnection()
 
-    const [response] =await connection.query(`update Table1 set 
-                                           last_name = "${user.last_name}" ,
-                                           Age = ${user.age},
-                                           phone_no = "${user.phone_no}",
-                                           email_id = "${user.email}",
-                                           password = "${user.password}",
-                                           where first_name ="${user.first_name}"`);
+    const [response] =await connection.query(`update Table1 set last_name = "${user.last_name}" , Age = ${user.age},  phone_no = "${user.phone_no}", email_id = "${user.email}", password = "${user.password}",profilepic ="${user.profilepic}" where first_name ="${user.first_name}"`);
                                           
    return response; 
 }
 
 async function addEmp(user){
     const connection = await makeConnection()
-    const response=await connection.query(`insert into Table1 values("${user.first_name}", "${user.last_name}",${user.age}, "${user.phone_no}", "${user.email}", "${user.password}");`)
+    const response=await connection.query(`insert into Table1 values("${user.first_name}", "${user.last_name}",${user.age}, "${user.phone_no}", "${user.email}", "${user.password}" , "${user.profilepic}");`)
     return response;
 }
 

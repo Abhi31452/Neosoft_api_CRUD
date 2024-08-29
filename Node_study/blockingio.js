@@ -1,11 +1,11 @@
 const { log } = require("node:console");
 const fs=require("node:fs");
 
-// const con =  fs.readFileSync("./Files/Sachin.txt");
+// conse.log("Further t con =  fs.readFileSync("./Files/Sachin.txt");
 
 // console.log(con);
 // console.log(con.toString());
-// console.log("Further data /................");
+// consoldata /................");
 
 let filepath = "./Files/Sachin.txt";
 
