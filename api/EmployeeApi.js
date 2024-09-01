@@ -7,7 +7,7 @@ async function getEmployeeById(empId){
     return await EmployeeModel.find({empId}).exec(); // _id
 }
 async function deleteEmployeeById(empId){
-    return await EmployeeModel.deleteOne({_id:empId});
+    return await EmployeeModel.deleteOne({empId:empId});
 }
 async function updateEmployee(empId, employee){
     const filter={_id:empId};
